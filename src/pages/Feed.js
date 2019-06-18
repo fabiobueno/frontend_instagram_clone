@@ -9,7 +9,7 @@ import like from "../assets/like.svg";
 import comment from "../assets/comment.svg";
 import send from "../assets/send.svg";
 
-require('dotenv').config()
+import { API_URL } from '../utils/constants';
 
 class Feed extends Component {
   state = {
@@ -28,7 +28,7 @@ class Feed extends Component {
   }
 
   registerToSocket = () => {
-    const socket = io(process.env.URL_API);
+    const socket = io(API_URL);
 
     //post, like
 
@@ -58,7 +58,7 @@ class Feed extends Component {
 
               <img src={more} alt="Mais" />
             </header>
-            <img src={`${process.env.URL_API}/files/${post.image}`} alt="" />
+            <img src={`${API_URL}/files/${post.image}`} alt="" />
 
             <footer>
               <div className="actions">

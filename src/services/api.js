@@ -1,8 +1,8 @@
 import axios from "axios";
-require('dotenv').config()
+import { API_URL } from '../utils/constants';
 
 const api = axios.create({
-  baseURL: process.env.URL_API
+  baseURL: API_URL
 });
 
 export default api;
